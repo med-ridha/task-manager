@@ -1,0 +1,17 @@
+<div class="centered-content">
+  <div class="updateForm form-group" *ngIf="task">
+    <h1 class="title"> Update <span>{{ task.name }}</span></h1>
+    <form >
+    <input [(ngModel)]="task.name" name="name" type="text" class="form-input form-control has-background-light"
+      placeholder="{{ task.name }}">
+    <br>
+    <input [(ngModel)]="task.desc" type="text" name="desc" class="form-input form-control has-background-light"
+      placeholder="{{ task.desc }}">
+    </form>
+    <br>
+    <div class="pull-right ">
+      <button class="btn white-text" (click)="cancelUpdate()"> Cancel </button>
+      <button class="btn btn-primary btn-rounded-corners" (click)="updateTask()">Update</button>
+    </div>
+  </div>
+</div>

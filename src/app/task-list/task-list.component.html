@@ -1,0 +1,19 @@
+<div class="centered-content">
+  <div class="sidebar">
+    <h1 class="title has-text-primary">tasks</h1>
+    <div class="task-menu">
+      <h3 class="white-text" *ngIf="tasks.length == 0"> no tasks found</h3>
+      <div *ngIf="tasks.length > 0">
+          <a class="task-menu-item" *ngFor="let task of tasks" [routerLink]="['/show-task', task.id]"
+            routerLinkActive="is-active">
+            <p clas="white-text">
+              {{ task.name }}
+            </p>
+            <p class="white-text">
+              ({{ task.status }})
+          </a>
+      </div>
+    </div>
+    <button routerLink="/new-task" class="btn btn-primary btn-rounded-corners">Add Task</button>
+  </div>
+</div>

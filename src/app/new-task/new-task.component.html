@@ -1,0 +1,15 @@
+<div class="centered-content">
+    <div class="modal-box form-group">
+        <h1 class="title"> Add new Task </h1>
+
+        <input #name type="text" class = "form-input form-control has-background-light" placeholder="Full Name"><br>
+        <input #desc type="text" class = "form-input form-control has-background-light" placeholder="Description"> <br>
+
+        <div class="pull-right">
+            <button class="btn white-text" routerLink='/'> Cancel </button>
+            <button class="btn btn-primary btn-rounded-corners" (click)="addTask(name.value,
+            desc.value)">Add</button>
+        </div>
+    </div>
+</div>
+

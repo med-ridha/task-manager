@@ -1,0 +1,38 @@
+<div class="task-manager-container">
+  <div class="task-list-container">
+    <div *ngIf="found">
+      <h1 class="title has-text-primary">{{ task.name }}</h1>
+      <div class="task">
+        <p class="white-text">
+          Description: {{ task.desc }}
+        </p>
+      </div>
+      <div class="task">
+        <p class="white-text">
+          Creation date: {{ task.date }}
+        </p>
+      </div>
+      <div class="task">
+        <p class="white-text">
+          <a>
+            task status : {{ task.status }}
+          </a>
+        </p>
+      </div>
+      <button class="btn btn-primary remove-button" (click)="deleteTask(task.id)">
+        Delete
+      </button>
+      <button class="btn btn-primary update-button" (click)="handleUpdate()">
+        Update
+      </button>
+      <button *ngIf="task.status == 'active'" class="btn btn-primary btn-rounded-corners mark-button" (click)="markAsDone()">Mark as
+        done</button>
+      <button *ngIf="task.status == 'done'" class="btn btn-primary btn-rounded-corners mark-button" (click)="markAsActive()">Mark as
+        Active</button>
+      <a routerLink="/task-list" class="tasklist-Button">task-list</a>
+      <div class="float" *ngIf="showUpdateForm">
+        <app-update-task [(update)]="showUpdateForm"></app-update-task>
+      </div>
+    </div>
+  </div>
+</div>
